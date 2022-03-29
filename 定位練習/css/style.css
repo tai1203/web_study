@@ -1,0 +1,121 @@
+.post{
+    width: 300px;
+    height: 300px;
+    background-color: #ccc;
+    font-size: 48px;
+
+}
+/* 依照原本的位置去做定位 */
+.relative{
+    background-color: #fdd2b5;
+    position: relative;
+    top: 100px;
+    left: 200px;
+    padding: 30px;
+}
+
+.static{
+    position: static;
+    background-color: #acdbc9;
+    top: 100px; /* 無作用 */
+}
+/* 
+找上層元素（可被定位元素）做絕對定位
+可被定位：absolute &relative & fixed */
+.absolute{
+    background-color: #f7a7a6;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* 找視窗定位 */
+.fix{
+    background-color: #f48b94;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+}
+
+.outter{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #000;
+    position: relative;
+}
+
+
+/* ============================= */
+.wrapper{
+    border: 2px solid #000;
+    height: 600px;
+    position: relative;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    /* 變形屬性 */
+    /* 向右100px 向下 200px 
+    用自己的長寬 為基準點 */
+    /* transform: translate(100px, 200px); */
+    /* 單獨設定Ｘ或Ｙ 但是有權重之分 所以如果要同時設定不能分開寫 
+    要像下面那樣寫*/
+    /* transform: translateX(400px) translateY(400px); */
+    /* transform: translateY(400px); 不行分開寫 後寫的會無效 */
+    /* 旋轉角度 */
+    /* transform: rotate(45deg); */
+    /* 傾斜 */
+    /* transform: skew(45deg); */
+    /* 放大縮小 填寫2 放大2倍 0.5 縮小一半 */
+    /* transform: scale(2);  */
+
+
+    /* position */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 將正方形放在置中（position 定位點在左上角 
+    用transform 調整成整個至中 */
+    /* 加前綴（解決瀏覽器渲染的問題）可以用auto prefixer */
+}
+
+
+/* =============================== */
+/* 偽元素 ::before & ::after */
+.box:before{
+    content: '123';
+    display: block;
+    background-color: yellow;
+}
+.box:after{
+    content: '456';
+    display: block;
+    background-color: yellow;
+}
+/* .wrapper ::before{}  <- 中間有空格
+wrapper裡面的元素的偽元素 == .box::before */
+
+/* 是wrapper 的偽元素 */
+.wrapper:before{
+    content: '789';
+}
+
+/* 偽類選擇器 */
+/* :hover */
+.box:hover{
+    background-color: #acdbc9;
+}
+/* :active */
+.box:active{
+    background-color: blue;
+}
+
+/* 結合偽元素和偽類選擇器 */
+.box:hover::after{
+    background-color: orange;
+    content:'yes'
+}
