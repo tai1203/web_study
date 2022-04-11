@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* LAYOUT */
+/* container 置中排版的保留字 */
+.container{
+    display:block;
+    margin: 0 auto;
+    width: 960px;
+    border: 1px solid #333;
+}
+
+
+
+
+
+/* inline-block */
+/* 換行問題 4px間距 display inline-block 對齊問題 */
+.row{
+    border: 1px solid #ccc;
+    background-color: #aacbff;
+}
+.col{
+    width: 33.333%;
+    border: 1px solid #fff;
+    background-color: #2f66bc;
+    /* display: inline-block 和 vertical-align:top 是成對出現的 */
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+/* float  */
+/* 清除浮動的問題 */
+.float-row{
+    border: 1px solid blue;
+}
+.float-row:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.float-col{
+    border: 1px solid #fff;
+    background-color: #2f66bc;
+    width: 33.333%;
+    padding-left: 16px;
+    padding-right: 16px;  
+    /* 向左向右浮動（順序會變 */
+    float: left;
+}
+.clearfix{
+    /* 解除float沒有高度的問題 float清除浮動 */
+    clear: both;
+}
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+.Flex-row{
+    border: 1px solid orange;
+    background-color: #aacbff;
+    /* 彈性排版很吃父層結構  */
+    display: flex;
+    /* 自適應距離 */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+}
+.Flex-col{
+    border: 1px solid #fff;
+    background-color: #2f66bc;
+    width: 200px;
+    padding-left: 16px;
+    padding-right: 16px;  
+}
+.flex-col-1{
+    width: 200px;
+}
+.flex-col-2{
+    flex: 1;
+}
+
+.flex-col-3{
+    width: 200px;
+}
+
+/* components */
+/* card */
+.card{
+    height: 300px;
+    width: 100%;
+    background-color: pink;
+}
